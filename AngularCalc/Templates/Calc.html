@@ -1,0 +1,23 @@
+﻿<div class="row">
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="4" id="display_cell">
+                    <input name="display" type="text" id="display" ng-model="result" disabled="disabled"/>
+                </td>
+                <td>
+                    <div class="btn btn-danger calc_button" ng-click="buttonClick('C')">C</div>
+                </td>
+            </tr>
+
+            <tr ng-repeat="matrixRow in calculatorMatrix">
+                <td ng-repeat="button in matrixRow" rowspan="{{button.rowspan}}" colspan="{{button.colspan}}">
+                    <div class=" calc_button" ng-class="{'btn btn-default' : !isDisabled }" id="{{button.id}}" 
+                         ng-click="buttonClick(button.text)">
+                        {{button.text}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
